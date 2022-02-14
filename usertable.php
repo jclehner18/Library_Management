@@ -1,5 +1,3 @@
-//usertable.php
-
 <?php
 	include 'conn.php';
 	echo "<br/>";

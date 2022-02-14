@@ -1,5 +1,3 @@
-//bookstable.php
-
 <?php
 	include 'conn.php';
 	echo "<br/>";

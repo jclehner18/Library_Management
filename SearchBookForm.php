@@ -1,21 +1,27 @@
 <?php
+
 	include('conn.php');
-	
-	$bookISBN = $_POST['ISBN'];
-	$btitle = $_POST['title'];
-	$sql = "select * from books where ISBN = '$bookISBN' or title = '$btitle'";
+	$sql = "select * from books";
 	$result = mysqli_query($conn,$sql);
 
-	
-	//header("refresh:0; url = SearchBookForm.php");
-	mysqli_close($conn);
-?>
 
+?>
 <html>
-	<center>
 	<body>
-		<h2> Search Result </h2>
-		<table border=1>
+		<center>
+		<h2> Enter Book ISBN or Title </h2>
+		<form action="SearchBook.php" method="post" >
+			<p>Title: </br>
+			<input type = "text" name="title"> </br></br>
+			OR </br></br>
+			ISBN: </br>
+			<input type = "text" name = "ISBN"></p>
+			<p><input type = "submit" value="search"></p></br> 
+			
+		</form>
+	</body>
+	
+	<table border=1>
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
@@ -39,9 +45,6 @@
 			?>
 			
 			
-		</table></br>
-		<a href="SearchBookForm.php">Search another book</a>
-	</body>
-	<center>
+		</table>
+	</center>
 </html>
-
