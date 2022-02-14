@@ -44,3 +44,6 @@
 			
 		
 		</table>
+		</center>
+	</body>
+</html>
