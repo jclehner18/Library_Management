@@ -16,7 +16,7 @@ include 'conn.php';
 		echo "Error:" .$sql. "<br />" .mysqli_error($conn);
 	}
 	
-	header("refresh:0; url = insertBook.php");
+	header("refresh:0; url = insertBookForm.php");
 	mysqli_close($conn);
 
 ?>

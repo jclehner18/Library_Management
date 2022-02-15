@@ -16,7 +16,7 @@ include 'conn.php';
 	<body>
 		<center>
 		<h2>Insert a book</h2>
-		<form action = "insertBookPHP.php" method = "post">
+		<form action = "insertBook.php" method = "post">
 		Title: <input type="text" name="title" required=""><br/><br/>
 		Author: <input type = "text" name = "author" required=""><br /><br />
 		ISBN: <input type = "text" name = "ISBN" required=""><br /><br />
