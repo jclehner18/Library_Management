@@ -34,7 +34,7 @@
 				<td> <?php echo $rows['UcardNumber']; ?> </td>
 				<td> <?php echo $rows['address']; ?> </td>
 				<td> <?php echo $rows['phone']; ?> </td>
-				<td> <a href = "userUpdate.php">Update</a> </td>
+				<td> <a href = "updateUser.php">Update</a> </td>
 				
 			</tr>
 			<?php

@@ -1,5 +1,6 @@
 
 <?php
+	session_start();
 	$server = "localhost";
 	$uname = "team";
 	$pwd = "team";
