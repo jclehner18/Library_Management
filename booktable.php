@@ -7,8 +7,9 @@
 	
 			title varchar(20) not null,
 			author varchar(20) not null,
-			ISBN int not null,
+			ISBN float (14,0) not null,
 			copies int not null,
+			genre varchar(20) not null,
 			
 			primary key(ISBN)
 			

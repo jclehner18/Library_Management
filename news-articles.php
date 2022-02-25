@@ -41,10 +41,6 @@
 		{
 			window.location.href = "programs.php";
 		}
-		function aboutUs()
-		{
-			window.location.href = "aboutUs.php";
-		}
 		function searchForm()
 		{
 			window.location.href = "SearchBookForm.php";
@@ -63,7 +59,6 @@
 		<button type="button" onclick="fantasyPage()" class = "buttonsize">Fantasy</button>
 		<button type="button" onclick="nonFictionPage()" class = "buttonsize">Nonfiction</button>
 		<button type="button" onclick="articlesPage()" class = "buttonsize">Newspapers</button>
-		<button type="button" onclick="aboutUs()" class = "buttonsize">About Us</button>
 		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button>
 		
 		<br><br><br><br><br><br>
@@ -77,7 +72,7 @@
 		<?php
 		include ("conn.php");
 		
-		$genre = $conn->query("SELECT genre FROM books WHERE genre LIKE 'Newspaper'");
+		$genre = $conn->query("SELECT title FROM books WHERE genre LIKE 'Newspaper'");
 		
 		while($data = mysqli_fetch_array($genre))
 		{

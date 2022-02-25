@@ -8,7 +8,9 @@
 			lname varchar(20) not null,
 			UcardNumber int not null,
 			address varchar(30) not null,
-			phone int not null,
+			phone float(10,0) not null,
+			clearance varchar(20) not null,
+			password varchar(30) not null,
 			
 			primary key(UcardNumber)
 			
