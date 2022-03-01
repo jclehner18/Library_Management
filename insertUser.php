@@ -8,10 +8,10 @@ include 'conn.php';
 	$usernumber = $_POST['UcardNumber'];
 	$useraddress = $_POST['address']; 
 	$userphone = $_POST['phone'];
-	$userclearence = $_POST['clearence'];
+	$userclearance = $_POST['clearance'];
 	$userpassword = $_POST['password'];
 	
-	$sql = "INSERT INTO users(fname, lname, UcardNumber, address, phone, clearence, password) VALUES('$userfname', '$userlname', '$usernumber', '$useraddress', '$userphone', '$userclearence', '$userpassword');";
+	$sql = "INSERT INTO users(fname, lname, UcardNumber, address, phone, clearance, password) VALUES('$userfname', '$userlname', '$usernumber', '$useraddress', '$userphone', '$userclearance', '$userpassword');";
 	
 	
 	if(mysqli_query($conn, $sql)) {
