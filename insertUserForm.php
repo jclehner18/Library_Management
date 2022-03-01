@@ -23,6 +23,13 @@ include 'conn.php';
 		Card Number: <input type = "text" name = "UcardNumber" required=""><br /><br />
 		Address: <input type = "text" name = "address" required=""><br /><br />
 		Phone: <input type = "text" name = "phone" required=""><br /><br />
+		Clearence: <input type = "text" name="clearence" list="clearence"><br/><br/>
+			<datalist id = "clearence">
+				<option value="Assistant">
+				<option value="Customer">
+				<option value = "Manager">
+			</datalist>
+		Password: <input type = "text" name="password" required> </br></br>
 		<input type = "submit" value = "SUBMIT"></br></br>
 		</form>
 		<table border=1>
@@ -32,6 +39,8 @@ include 'conn.php';
 				<th>Card Number</th>
 				<th>Address</th>
 				<th>Phone</th>
+				<th> Clearence </th>
+				<th> Password </th>
 				
 			</tr>
 			<?php
@@ -44,6 +53,8 @@ include 'conn.php';
 				<td> <?php echo $rows['UcardNumber']; ?> </td>
 				<td> <?php echo $rows['address']; ?> </td>
 				<td> <?php echo $rows['phone']; ?> </td>
+				<td> <?php echo $rows['clearence']; ?> </td>
+				<td> <?php echo $rows['password']; ?> </td>
 				
 			</tr>
 			<?php
