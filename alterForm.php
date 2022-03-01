@@ -41,9 +41,33 @@
 		{
 			window.location.href = "news-articles.php";
 		}
+		function eventsPage()
+		{
+			window.location.href = "programs.php";
+		}
 		function searchForm()
 		{
-			window.location.href = "SearchBookForm-Cust.php";
+			window.location.href = "searchForm.php";
+		}
+		function insertForm()
+		{
+			window.location.href = "insertForm.php";
+		}
+		function deleteForm()
+		{
+			window.location.href = "deleteForm.php";
+		}
+		function alterForm()
+		{
+			window.location.href = "alterForm.php";
+		}
+		function bookForm()
+		{
+			window.location.href = "deleteBookForm.php";
+		}
+		function userForm()
+		{
+			window.location.href = "deleteUserForm.php";
 		}
 		</script>
 	</head>
@@ -59,34 +83,14 @@
 		<button type="button" onclick="nonFictionPage()" class = "buttonsize">Nonfiction</button>
 		<button type="button" onclick="articlesPage()" class = "buttonsize">Newspapers</button>
 		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button>
+		<button type="button" onclick="insertForm()" class = "buttonsize">Insert</button>
+		<button type="button" onclick="deleteForm()" class = "buttonsize">Delete</button>
+		<button type="button" onclick="alterForm()" class = "buttonsize">Alter</button>
 		
-		<br><br><br><br><br><br>
+		<br><br><br><br>
 		
-		<h2>Newspapers</h2>
-		
-		<table border = "2">
-			<tr>
-				<th>Name</th>
-				<th>Author</th>
-				<th>ISBN</th>
-				<th>Availability</th>
-			</tr>
-		
-		<?php
-		include ("conn.php");
-		
-		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Newspaper'");
-		
-		while($data = mysqli_fetch_array($genre))
-		{
-			echo "<tr><td>".$data[0]."</td>";
-			echo "<td>".$data[1]."</td>";
-			echo "<td>".$data[2]."</td>";
-			echo "<td>".$data[3]."</td></tr>";
-		}
-		echo "</table>";
-		$conn->close();?>
-		
+		<button type="button" onclick="bookForm()" class = "buttonsize">Book Alter</button>
+		<button type="button" onclick="userForm()" class = "buttonsize">User Alter</button>
 	
 	
 	</body>

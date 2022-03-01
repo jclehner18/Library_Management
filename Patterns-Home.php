@@ -21,6 +21,10 @@
 		{
 			window.location.href = "Patterns-Home.php";
 		}
+		function login()
+		{
+			window.location.href = "login.php";
+		}
 		function sciFiPage()
 		{
 			window.location.href = "sciFi.php";
@@ -37,25 +41,9 @@
 		{
 			window.location.href = "news-articles.php";
 		}
-		function eventsPage()
-		{
-			window.location.href = "programs.php";
-		}
 		function searchForm()
 		{
-			window.location.href = "SearchBookForm.php";
-		}
-		function insertForm()
-		{
-			window.location.href = "insertBookForm.php";
-		}
-		function deleteForm()
-		{
-			window.location.href = "deleteBookForm.php";
-		}
-		function alterForm()
-		{
-			window.location.href = "alterBookForm.php";
+			window.location.href = "searchBookForm-Cust.php";
 		}
 		
 		</script>
@@ -72,7 +60,6 @@
 		<button type="button" onclick="nonFictionPage()" class = "buttonsize">Nonfiction</button>
 		<button type="button" onclick="articlesPage()" class = "buttonsize">Newspapers</button>
 		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button>
-		<button type="button" onclick="insertForm()" class = "buttonsize">Insert</button>
 		
 		<br><br><br><br>
 		

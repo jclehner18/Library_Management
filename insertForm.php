@@ -19,7 +19,7 @@
 		<script>
 		function homePage()
 		{
-			window.location.href = "Patterns-Home.php";
+			window.location.href = "Patterns-Home-Man.php";
 		}
 		function login()
 		{
@@ -27,23 +27,43 @@
 		}
 		function sciFiPage()
 		{
-			window.location.href = "sciFi.php";
+			window.location.href = "sciFi-Man.php";
 		}
 		function fantasyPage()
 		{
-			window.location.href = "fantasy.php";
+			window.location.href = "fantasy-Man.php";
 		}
 		function nonFictionPage()
 		{
-			window.location.href = "nonFiction.php";
+			window.location.href = "nonFiction-Man.php";
 		}
 		function articlesPage()
 		{
-			window.location.href = "news-articles.php";
+			window.location.href = "news-articles-Man.php";
 		}
 		function searchForm()
 		{
-			window.location.href = "SearchBookForm-Cust.php";
+			window.location.href = "searchForm.php";
+		}
+		function insertForm()
+		{
+			window.location.href = "insertForm.php";
+		}
+		function deleteForm()
+		{
+			window.location.href = "deleteBookForm.php";
+		}
+		function alterForm()
+		{
+			window.location.href = "alterBookForm.php";
+		}
+		function bookForm()
+		{
+			window.location.href = "insertBookForm.php";
+		}
+		function userForm()
+		{
+			window.location.href = "insertUserForm.php";
 		}
 		</script>
 	</head>
@@ -59,34 +79,13 @@
 		<button type="button" onclick="nonFictionPage()" class = "buttonsize">Nonfiction</button>
 		<button type="button" onclick="articlesPage()" class = "buttonsize">Newspapers</button>
 		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button>
+		<button type="button" onclick="insertForm()" class = "buttonsize">Insert</button>
+		<button type="button" onclick="deleteForm()" class = "buttonsize">Delete</button>
 		
-		<br><br><br><br><br><br>
+		<br><br><br><br>
 		
-		<h2>Newspapers</h2>
-		
-		<table border = "2">
-			<tr>
-				<th>Name</th>
-				<th>Author</th>
-				<th>ISBN</th>
-				<th>Availability</th>
-			</tr>
-		
-		<?php
-		include ("conn.php");
-		
-		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Newspaper'");
-		
-		while($data = mysqli_fetch_array($genre))
-		{
-			echo "<tr><td>".$data[0]."</td>";
-			echo "<td>".$data[1]."</td>";
-			echo "<td>".$data[2]."</td>";
-			echo "<td>".$data[3]."</td></tr>";
-		}
-		echo "</table>";
-		$conn->close();?>
-		
+		<button type="button" onclick="bookForm()" class = "buttonsize">Book Insert</button>
+		<button type="button" onclick="userForm()" class = "buttonsize">User Insert</button>
 	
 	
 	</body>

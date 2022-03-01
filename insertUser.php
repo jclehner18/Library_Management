@@ -8,10 +8,8 @@ include 'conn.php';
 	$usernumber = $_POST['UcardNumber'];
 	$useraddress = $_POST['address']; 
 	$userphone = $_POST['phone'];
-	$userclearance = $_POST['clearance'];
-	$userpassword = $_POST['password'];
 	
-	$sql = "INSERT INTO users(fname, lname, UcardNumber, address, phone, clearance, password) VALUES('$userfname', '$userlname', '$usernumber', '$useraddress', '$userphone', '$userclearance', '$userpassword');";
+	$sql = "INSERT INTO users(fname, lname, UcardNumber, address, phone) VALUES('$userfname', '$userlname', '$usernumber', '$useraddress', '$userphone');";
 	
 	
 	if(mysqli_query($conn, $sql)) {
@@ -21,7 +19,7 @@ include 'conn.php';
 		echo "Error:" .$sql. "<br />" .mysqli_error($conn);
 	}
 	
-	header("refresh:0; url = insertUserForm.php");
+	header("refresh:0; url = insertForm.php");
 	mysqli_close($conn);
 
 ?>

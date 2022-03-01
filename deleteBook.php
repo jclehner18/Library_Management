@@ -11,7 +11,7 @@
 		echo "Error:" .$sql. "<br />" .mysqli_error($conn);
 	} */
 	
-	header("refresh:0; url = deleteBookForm.php");
+	header("refresh:0; url = deleteForm.php");
 	mysqli_close($conn);
 
 ?>

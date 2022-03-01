@@ -21,6 +21,10 @@
 		{
 			window.location.href = "Patterns-Home.php";
 		}
+		function login()
+		{
+			window.location.href = "login.php";
+		}
 		function sciFiPage()
 		{
 			window.location.href = "sciFi.php";
@@ -45,7 +49,6 @@
 		{
 			window.location.href = "SearchBookForm.php";
 		}
-		
 		</script>
 	</head>
 	
@@ -63,20 +66,27 @@
 		
 		<br><br><br><br><br><br>
 		
+		<h2>Sci-Fi</h2>
 		
 		<table border = "2">
 			<tr>
 				<th>Name</th>
+				<th>Author</th>
+				<th>ISBN</th>
+				<th>Availability</th>
 			</tr>
 		
 		<?php
 		include ("conn.php");
 		
-		$genre = $conn->query("SELECT title FROM books WHERE genre LIKE 'Sci-Fi'");
+		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Sci-Fi'");
 		
 		while($data = mysqli_fetch_array($genre))
 		{
-			echo "<tr><td>".$data[0]."</td></tr>";
+			echo "<tr><td>".$data[0]."</td>";
+			echo "<td>".$data[1]."</td>";
+			echo "<td>".$data[2]."</td>";
+			echo "<td>".$data[3]."</td></tr>";
 		}
 		echo "</table>";
 		$conn->close();?>

@@ -1,11 +1,16 @@
 <?php
-
 	include('conn.php');
-	$sql = "select * from books";
+	
+	$bookISBN = $_POST['ISBN'];
+	$btitle = $_POST['title'];
+	$sql = "select * from books where ISBN = '$bookISBN' or title = '$btitle'";
 	$result = mysqli_query($conn,$sql);
 
-
+	
+	//header("refresh:0; url = SearchBookForm.php");
+	mysqli_close($conn);
 ?>
+
 <html>
 	<head>
 		<title>Trine University Library</title>
@@ -26,60 +31,57 @@
 		<script>
 		function homePage()
 		{
-			window.location.href = "Patterns-Home.php";
-		}
-		function login()
-		{
-			window.location.href = "login.php";
+			window.location.href = "Patterns-Home-Man.php";
 		}
 		function sciFiPage()
 		{
-			window.location.href = "sciFi.php";
+			window.location.href = "sciFi-Man.php";
 		}
 		function fantasyPage()
 		{
-			window.location.href = "fantasy.php";
+			window.location.href = "fantasy-Man.php";
 		}
 		function nonFictionPage()
 		{
-			window.location.href = "nonFiction.php";
+			window.location.href = "nonFiction-Man.php";
 		}
 		function articlesPage()
 		{
-			window.location.href = "news-articles.php";
+			window.location.href = "news-articles-Man.php";
+		}
+		function eventsPage()
+		{
+			window.location.href = "programs.php";
 		}
 		function searchForm()
 		{
-			window.location.href = "SearchBookForm.php";
+			window.location.href = "searchForm.php";
+		}
+		function insertForm()
+		{
+			window.location.href = "insertForm.php";
+		}
+		function deleteForm()
+		{
+			window.location.href = "deleteForm.php";
 		}
 		</script>
 	</head>
+	
 	<body class = "scenery-background">
 		<h1 style = "color: white;">Trine Library</h1>
 		<br>
-		<button type="button" onclick="login()" class = "buttonsize">Log In</button>
 		<button type="button" onclick="homePage()" class = "buttonsize">Home</button>
 		<button type="button" onclick="sciFiPage()" class = "buttonsize">Sci-Fi</button>
 		<button type="button" onclick="fantasyPage()" class = "buttonsize">Fantasy</button>
 		<button type="button" onclick="nonFictionPage()" class = "buttonsize">Nonfiction</button>
 		<button type="button" onclick="articlesPage()" class = "buttonsize">Newspapers</button>
-		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button><br><br><br><br><br><br>
-		
-		
-		<center>
-		<h2> Enter Book ISBN or Title </h2>
-		<form action="SearchBook.php" method="post" >
-			<p>Title: </br>
-			<input type = "text" name="title"> </br></br>
-			OR </br></br>
-			ISBN: </br>
-			<input type = "text" name = "ISBN"></p>
-			<p><input type = "submit" value="search"></p></br> 
-			
-		</form>
-	</body>
-	
-	<table border=1>
+		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button>
+		<button type="button" onclick="insertForm()" class = "buttonsize">Insert</button>
+		<button type="button" onclick="deleteForm()" class = "buttonsize">Delete</button>
+		<center><br><br><br><br><br><br>
+		<h2> Search Result </h2>
+		<table border=1>
 			<tr>
 				<th>Title</th>
 				<th>Author</th>
@@ -105,6 +107,9 @@
 			?>
 			
 			
-		</table>
-	</center>
+		</table></br>
+		<a href="SearchBookForm.php">Search another book</a>
+	</body>
+	<center>
 </html>
+

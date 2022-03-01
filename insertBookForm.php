@@ -21,6 +21,7 @@ include 'conn.php';
 		Author: <input type = "text" name = "author" required=""><br /><br />
 		ISBN: <input type = "text" name = "ISBN" required=""><br /><br />
 		Copies: <input type = "text" name = "copies" required=""><br /><br />
+		Genre: <input type = "text" name = "genre" required=""><br /><br />
 		<input type = "submit" value = "SUBMIT"></br></br>
 		</form>
 		<table border=1>
@@ -29,6 +30,7 @@ include 'conn.php';
 				<th>Author</th>
 				<th>ISBN</th>
 				<th>Copies</th>
+				<th>Genre</th>
 				
 			</tr>
 			<?php
@@ -40,6 +42,7 @@ include 'conn.php';
 				<td> <?php echo $rows['author']; ?> </td>
 				<td> <?php echo $rows['ISBN']; ?> </td>
 				<td> <?php echo $rows['copies']; ?> </td>
+				<td> <?php echo $rows['genre']; ?> </td>
 				
 			</tr>
 			<?php

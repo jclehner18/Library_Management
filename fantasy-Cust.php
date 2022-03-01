@@ -19,27 +19,23 @@
 		<script>
 		function homePage()
 		{
-			window.location.href = "Patterns-Home.php";
-		}
-		function login()
-		{
-			window.location.href = "login.php";
+			window.location.href = "Patterns-Home-Cust.php";
 		}
 		function sciFiPage()
 		{
-			window.location.href = "sciFi.php";
+			window.location.href = "sciFi-Cust.php";
 		}
 		function fantasyPage()
 		{
-			window.location.href = "fantasy.php";
+			window.location.href = "fantasy-Cust.php";
 		}
 		function nonFictionPage()
 		{
-			window.location.href = "nonFiction.php";
+			window.location.href = "nonFiction-Cust.php";
 		}
 		function articlesPage()
 		{
-			window.location.href = "news-articles.php";
+			window.location.href = "news-articles-Cust.php";
 		}
 		function searchForm()
 		{
@@ -52,7 +48,6 @@
 	<body class = "scenery-background">
 		<h1 style = "color: white;">Trine Library</h1>
 		<br>
-		<button type="button" onclick="login()" class = "buttonsize">Log In</button>
 		<button type="button" onclick="homePage()" class = "buttonsize">Home</button>
 		<button type="button" onclick="sciFiPage()" class = "buttonsize">Sci-Fi</button>
 		<button type="button" onclick="fantasyPage()" class = "buttonsize">Fantasy</button>
@@ -62,7 +57,7 @@
 		
 		<br><br><br><br><br><br>
 		
-		<h2>Newspapers</h2>
+		<h2>Fantasy</h2>
 		
 		<table border = "2">
 			<tr>
@@ -75,7 +70,7 @@
 		<?php
 		include ("conn.php");
 		
-		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Newspaper'");
+		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Fantasy'");
 		
 		while($data = mysqli_fetch_array($genre))
 		{

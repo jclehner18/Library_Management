@@ -23,6 +23,7 @@
 				<th>Author</th>
 				<th>ISBN</th>
 				<th>Copies</th>
+				<th>Genre</th>
 				
 			</tr>
 			<?php
@@ -34,6 +35,7 @@
 				<td> <?php echo $rows['author']; ?> </td>
 				<td> <?php echo $rows['ISBN']; ?> </td>
 				<td> <?php echo $rows['copies']; ?> </td>
+				<td> <?php echo $rows['genre']; ?> </td>
 				
 			</tr>
 			<?php

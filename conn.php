@@ -1,10 +1,9 @@
 
 <?php
-	session_start();
 	$server = "localhost";
 	$uname = "team";
 	$pwd = "team";
-	$db = 'libraryManagement';
+	$db = 'librarymanagement';
 	
 	$conn = mysqli_connect($server, $uname, $pwd, $db);
 	if(!$conn) {

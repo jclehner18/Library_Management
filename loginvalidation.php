@@ -29,10 +29,19 @@
 			
 	$row = mysqli_fetch_array($result);
 	
-	if($row['UcardNumber'] == $cnumber && $row['password'] == $pass )
+	if($row['UcardNumber'] == $cnumber && $row['password'] == $pass)
 	{
-		echo "Login Successful: " .$row['fname'];
-		header("refresh:1; url = MainPage.php");
+		if($row['clearance'] == 'customer')
+		{
+			
+			echo "Login Successful: " .$row['fname'];
+			header("refresh:1; url = Patterns-Home-Cust.php");
+		}
+		else if ($row['clearance'] == 'manager' or $row['clearance'] == 'manager')
+		{
+			echo "Login Successful: " .$row['fname'];
+			header("refresh:1; url = Patterns-Home-Man.php");
+		}
 		
 	}
 	

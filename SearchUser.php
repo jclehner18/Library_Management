@@ -41,7 +41,7 @@
 			
 			
 		</table>
-		<a href="SearchUserForm.php">Search another user</a>
+		<a href="searchForm.php">Search another user</a>
 	</body>
 	</center>
 </html>

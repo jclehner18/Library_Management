@@ -26,38 +26,37 @@
 		<script>
 		function homePage()
 		{
-			window.location.href = "Patterns-Home.php";
-		}
-		function login()
-		{
-			window.location.href = "login.php";
+			window.location.href = "Patterns-Home-Cust.php";
 		}
 		function sciFiPage()
 		{
-			window.location.href = "sciFi.php";
+			window.location.href = "sciFi-Cust.php";
 		}
 		function fantasyPage()
 		{
-			window.location.href = "fantasy.php";
+			window.location.href = "fantasy-Cust.php";
 		}
 		function nonFictionPage()
 		{
-			window.location.href = "nonFiction.php";
+			window.location.href = "nonFiction-Cust.php";
 		}
 		function articlesPage()
 		{
-			window.location.href = "news-articles.php";
+			window.location.href = "news-articles-Cust.php";
+		}
+		function eventsPage()
+		{
+			window.location.href = "programs.php";
 		}
 		function searchForm()
 		{
-			window.location.href = "SearchBookForm.php";
+			window.location.href = "SearchBookForm-Cust.php";
 		}
 		</script>
 	</head>
 	<body class = "scenery-background">
 		<h1 style = "color: white;">Trine Library</h1>
 		<br>
-		<button type="button" onclick="login()" class = "buttonsize">Log In</button>
 		<button type="button" onclick="homePage()" class = "buttonsize">Home</button>
 		<button type="button" onclick="sciFiPage()" class = "buttonsize">Sci-Fi</button>
 		<button type="button" onclick="fantasyPage()" class = "buttonsize">Fantasy</button>
@@ -68,7 +67,7 @@
 		
 		<center>
 		<h2> Enter Book ISBN or Title </h2>
-		<form action="SearchBook.php" method="post" >
+		<form action="searchBook-Cust.php" method="post" >
 			<p>Title: </br>
 			<input type = "text" name="title"> </br></br>
 			OR </br></br>
