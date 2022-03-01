@@ -53,6 +53,7 @@
 			window.location.href = "SearchBookForm.php";
 		}
 		</script>
+		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	<body class = "scenery-background">
 		<h1 style = "color: white;">Trine Library</h1>

@@ -54,7 +54,6 @@
 			window.location.href = "deleteForm.php";
 		}
 		</script>
-		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	
 	
@@ -72,7 +71,7 @@
 		
 		<br><br><br><br><br><br>
 		
-		<h2>Fantasy</h2>
+		<h2>Nonfiction</h2>
 		
 		<table border = "2">
 			<tr>
@@ -85,7 +84,7 @@
 		<?php
 		include ("conn.php");
 		
-		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Fantasy'");
+		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Nonfiction'");
 		
 		while($data = mysqli_fetch_array($genre))
 		{

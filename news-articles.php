@@ -46,6 +46,7 @@
 			window.location.href = "SearchBookForm-Cust.php";
 		}
 		</script>
+		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	
 	

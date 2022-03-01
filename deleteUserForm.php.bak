@@ -1,28 +1,29 @@
 <?php
-	include('conn.php');
+	include 'conn.php';
 	
-	$lastname = $_POST['lname'];
-	$cardnum = $_POST['UcardNumber'];
-	
-	$sql = "select * from users where lname = '$lastname' or UcardNumber = '$cardnum'";
+	$sql = "Select * from users";
 	$result = mysqli_query($conn, $sql);
-	
-?>
 
+?>
 
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
+		<title> Delete User </title>
+	</head>
 	<body>
-	<center>
-	<h2> Search Result </h2>
-		<table border=1>
+		<center>
+			<h2> Delete a user </h2>
+			<form action = "deleteUser.php" method = "post">
+				User Number: <input type = "text" name = "UcardNumber" required=""></br></br>
+				<input type = "submit" value = "Delete"></br></br>
+			</form>
+			<table border=1>
 			<tr>
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Card Number</th>
 				<th>Address</th>
-				<th>Phone Number</th>
+				<th>Phone</th>
 				
 			</tr>
 			<?php
@@ -41,9 +42,8 @@
 				}
 			?>
 			
-			
+		
 		</table>
-		<a href="searchForm.php">Search another user</a>
+		</center>
 	</body>
-	</center>
 </html>

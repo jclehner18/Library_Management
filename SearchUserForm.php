@@ -8,6 +8,8 @@
 ?>
 
 <html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	<body>
 		<center>
 		<h2> User Search </h2>

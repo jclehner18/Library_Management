@@ -9,6 +9,7 @@
 <html>
 	<head>
 		<title> Delete User </title>
+		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	<body>
 		<center>

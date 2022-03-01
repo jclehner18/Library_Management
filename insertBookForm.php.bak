@@ -11,7 +11,6 @@ include 'conn.php';
 <html>
 	<head>
 		<title> Insert Books </title>
-		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	
 	<body>

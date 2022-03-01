@@ -41,6 +41,10 @@
 		{
 			window.location.href = "news-articles-Man.php";
 		}
+		function eventsPage()
+		{
+			window.location.href = "programs.php";
+		}
 		function searchForm()
 		{
 			window.location.href = "searchForm.php";
@@ -53,8 +57,19 @@
 		{
 			window.location.href = "deleteForm.php";
 		}
+		function alterForm()
+		{
+			window.location.href = "alterBookForm.php";
+		}
+		function bookForm()
+		{
+			window.location.href = "deleteBookForm.php";
+		}
+		function userForm()
+		{
+			window.location.href = "deleteUserForm.php";
+		}
 		</script>
-		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	
 	
@@ -69,34 +84,12 @@
 		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button>
 		<button type="button" onclick="insertForm()" class = "buttonsize">Insert</button>
 		<button type="button" onclick="deleteForm()" class = "buttonsize">Delete</button>
+		<button type="button" onclick="alterForm()" class = "buttonsize">Alter</button>
 		
-		<br><br><br><br><br><br>
+		<br><br><br><br>
 		
-		<h2>Fantasy</h2>
-		
-		<table border = "2">
-			<tr>
-				<th>Name</th>
-				<th>Author</th>
-				<th>ISBN</th>
-				<th>Availability</th>
-			</tr>
-		
-		<?php
-		include ("conn.php");
-		
-		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Fantasy'");
-		
-		while($data = mysqli_fetch_array($genre))
-		{
-			echo "<tr><td>".$data[0]."</td>";
-			echo "<td>".$data[1]."</td>";
-			echo "<td>".$data[2]."</td>";
-			echo "<td>".$data[3]."</td></tr>";
-		}
-		echo "</table>";
-		$conn->close();?>
-		
+		<button type="button" onclick="bookForm()" class = "buttonsize">Book Delete</button>
+		<button type="button" onclick="userForm()" class = "buttonsize">User Delete</button>
 	
 	
 	</body>

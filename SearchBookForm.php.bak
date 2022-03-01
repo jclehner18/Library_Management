@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+
+	include('conn.php');
+	$sql = "select * from books";
+	$result = mysqli_query($conn,$sql);
+
+
+?>
 <html>
 	<head>
 		<title>Trine University Library</title>
@@ -43,14 +50,10 @@
 		}
 		function searchForm()
 		{
-			window.location.href = "searchBookForm-Cust.php";
+			window.location.href = "SearchBookForm.php";
 		}
-		
 		</script>
-		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
-	
-	
 	<body class = "scenery-background">
 		<h1 style = "color: white;">Trine Library</h1>
 		<br>
@@ -60,15 +63,48 @@
 		<button type="button" onclick="fantasyPage()" class = "buttonsize">Fantasy</button>
 		<button type="button" onclick="nonFictionPage()" class = "buttonsize">Nonfiction</button>
 		<button type="button" onclick="articlesPage()" class = "buttonsize">Newspapers</button>
-		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button>
+		<button type="button" onclick="searchForm()" class = "buttonsize">Search</button><br><br><br><br><br><br>
 		
-		<br><br><br><br>
 		
-		<h2> Software Patterns and Teams Library </h2>
-		
-		<p>This website was desiged and developed by Jacob Myers, Jack Lehner, and Josiah Mortoff</p>
-		
-	
-	
+		<center>
+		<h2> Enter Book ISBN or Title </h2>
+		<form action="SearchBook.php" method="post" >
+			<p>Title: </br>
+			<input type = "text" name="title"> </br></br>
+			OR </br></br>
+			ISBN: </br>
+			<input type = "text" name = "ISBN"></p>
+			<p><input type = "submit" value="search"></p></br> 
+			
+		</form>
 	</body>
+	
+	<table border=1>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>ISBN</th>
+				<th>Copies</th>
+				<th>Genre</th>
+				
+			</tr>
+			<?php
+				while($rows=mysqli_fetch_assoc($result))
+				{
+			?>
+			<tr>
+				<td> <?php echo $rows['title']; ?> </td> 
+				<td> <?php echo $rows['author']; ?> </td>
+				<td> <?php echo $rows['ISBN']; ?> </td>
+				<td> <?php echo $rows['copies']; ?> </td>
+				<td> <?php echo $rows['genre']; ?> </td>
+				
+			</tr>
+			<?php
+				}
+			?>
+			
+			
+		</table>
+	</center>
 </html>

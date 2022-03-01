@@ -41,6 +41,10 @@
 		{
 			window.location.href = "news-articles-Man.php";
 		}
+		function eventsPage()
+		{
+			window.location.href = "programs.php";
+		}
 		function searchForm()
 		{
 			window.location.href = "searchForm.php";
@@ -54,7 +58,6 @@
 			window.location.href = "deleteForm.php";
 		}
 		</script>
-		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	
 	
@@ -72,7 +75,7 @@
 		
 		<br><br><br><br><br><br>
 		
-		<h2>Fantasy</h2>
+		<h2>Sci-Fi</h2>
 		
 		<table border = "2">
 			<tr>
@@ -85,7 +88,7 @@
 		<?php
 		include ("conn.php");
 		
-		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Fantasy'");
+		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Sci-Fi'");
 		
 		while($data = mysqli_fetch_array($genre))
 		{

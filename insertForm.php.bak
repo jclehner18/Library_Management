@@ -51,16 +51,28 @@
 		}
 		function deleteForm()
 		{
-			window.location.href = "deleteForm.php";
+			window.location.href = "deleteBookForm.php";
+		}
+		function alterForm()
+		{
+			window.location.href = "alterBookForm.php";
+		}
+		function bookForm()
+		{
+			window.location.href = "insertBookForm.php";
+		}
+		function userForm()
+		{
+			window.location.href = "insertUserForm.php";
 		}
 		</script>
-		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	
 	
 	<body class = "scenery-background">
 		<h1 style = "color: white;">Trine Library</h1>
 		<br>
+		<button type="button" onclick="login()" class = "buttonsize">Log In</button>
 		<button type="button" onclick="homePage()" class = "buttonsize">Home</button>
 		<button type="button" onclick="sciFiPage()" class = "buttonsize">Sci-Fi</button>
 		<button type="button" onclick="fantasyPage()" class = "buttonsize">Fantasy</button>
@@ -70,33 +82,10 @@
 		<button type="button" onclick="insertForm()" class = "buttonsize">Insert</button>
 		<button type="button" onclick="deleteForm()" class = "buttonsize">Delete</button>
 		
-		<br><br><br><br><br><br>
+		<br><br><br><br>
 		
-		<h2>Fantasy</h2>
-		
-		<table border = "2">
-			<tr>
-				<th>Name</th>
-				<th>Author</th>
-				<th>ISBN</th>
-				<th>Availability</th>
-			</tr>
-		
-		<?php
-		include ("conn.php");
-		
-		$genre = $conn->query("SELECT title, author, isbn, copies FROM books WHERE genre LIKE 'Fantasy'");
-		
-		while($data = mysqli_fetch_array($genre))
-		{
-			echo "<tr><td>".$data[0]."</td>";
-			echo "<td>".$data[1]."</td>";
-			echo "<td>".$data[2]."</td>";
-			echo "<td>".$data[3]."</td></tr>";
-		}
-		echo "</table>";
-		$conn->close();?>
-		
+		<button type="button" onclick="bookForm()" class = "buttonsize">Book Insert</button>
+		<button type="button" onclick="userForm()" class = "buttonsize">User Insert</button>
 	
 	
 	</body>

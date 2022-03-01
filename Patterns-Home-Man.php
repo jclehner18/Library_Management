@@ -54,6 +54,7 @@
 			window.location.href = "deleteForm.php";
 		}
 		</script>
+		<link rel="stylesheet" type="text/css" href="cssstyle.css" media="screen" />
 	</head>
 	
 	
